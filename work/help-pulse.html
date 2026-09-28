@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Help Pulse — Rachel Batra</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <p class="rail-lede"><a href="../index.html">Rachel Batra studied economics at St. Stephen’s College, Delhi.</a></p>
+      <ol class="index">
+        <li><a href="help-pulse.html" aria-current="page">Help Pulse</a></li>
+        <li><a href="pcm-agent.html">PCM Agent</a></li>
+        <li><a href="oaxaca.html">Oaxaca’s Double-Edged Sword</a></li>
+        <li><a href="wasila.html">WASILA</a></li>
+        <li><a href="abcd.html">ABCD</a></li>
+      </ol>
+      <p class="meta-nav">
+        <a href="../about.html">About</a>
+        <a href="../play.html">Play</a>
+        <a href="https://github.com/rachelbatra032-design">GitHub</a>
+      </p>
+      <p class="rail-foot">© <span id="year"></span> Rachel Batra</p>
+    </aside>
+    <main class="stage">
+      <div class="prose-inner">
+      <p class="kicker">Systems I built</p>
+      <h1>Help Pulse</h1>
+      <p class="lede">A small, reproducible pipeline that turns “not helpful” votes and free-text comments into a prioritized backlog. Public demo. Mock data only.</p>
+      <img class="hero-img" src="../images/help-pulse.jpg" alt="">
+
+      <table class="facts">
+        <tr><th>What it is</th><td>Triage rules plus a static dashboard</td></tr>
+        <tr><th>Stack</th><td>Python · one HTML file · no npm</td></tr>
+        <tr><th>Data</th><td>Fictional feedback, IDs, and Help URLs</td></tr>
+        <tr><th>Role of AI</th><td>Drafts a pass; a person reviews before anything is acted on</td></tr>
+      </table>
+
+      <h2>The problem</h2>
+      <p>Help sites collect a steady stream of unhelpful votes and comments. Without a shared system, writers either read every record one by one in a CRM, or they triage inconsistently — the same bug three times, a broken link sitting next to a vague rant.</p>
+      <p>“Pulse” here is a health check on the docs: volume plus severity of feedback. It is not a product brand.</p>
+
+      <h2>What the system answers</h2>
+      <ul>
+        <li><strong>Should we act?</strong> Actionable / Non-actionable / Needs-info</li>
+        <li><strong>What kind of fix?</strong> Broken link · incorrect info · missing info · unclear · route elsewhere</li>
+        <li><strong>How urgent?</strong> P0–P3. P0 is always human-confirmed.</li>
+      </ul>
+
+      <h2>Two parts</h2>
+      <p>The skill is the brain: written rules for triage, buckets, priority, and source validation. The dashboard is the face: heatmap, Fix First list, duplicate clusters, article drawer, work-item template.</p>
+      <p>This public repo is a sanitized, runnable demo of that idea — same architecture and UI patterns, mock data only.</p>
+
+      <h2>How a pass is made</h2>
+      <p>Open records only. Each row gets a provisional bucket, then — for the four content buckets — a check against the article itself. A claim the page bears out is Actionable. A claim the live article contradicts is Non-actionable. If the page will not load, the call stays flagged as source-unverified. “Route elsewhere” skips the article check; reading the doc cannot prove product behavior.</p>
+      <p>Priority walks a decision tree. Internal reporters can floor an actionable item at P1. A P3 that clusters to ten or more records steps up to P2. P0 — security, customer-data exposure, legal risk in the doc — never lands in the file without an explicit yes from a person.</p>
+      <p class="pull">AI drafts. A person approves. No auto-close, no auto-created work items, no publish.</p>
+
+      <h2>Rules that stay hard</h2>
+      <ul>
+        <li>Doc-versus-product is a hypothesis, not a verdict. Routing to product means “confirm with someone who knows,” not “the product is broken.”</li>
+        <li>Triage on signal, not tone. Profanity does not change the call. The note is restated professionally; the customer’s words stay in the source column.</li>
+        <li>No validity verdict without retrieved content. If the article did not render, do not invent what it says.</li>
+        <li>One work item per cluster, not per vote. Every member record stays visible on the dashboard.</li>
+      </ul>
+
+      <h2>What is in the demo</h2>
+      <p>Forty-four mock records map to nine stub Help articles baked into a single <code>index.html</code>. Heatmap, filters, clusters, drawer, and the work-item template all run locally. Feedback links go to <code>example.com</code>. The live Help host is fiction. The feedback form is off on purpose.</p>
+      <p>IDs look like <code>HTAV-1000001</code>. Help URLs stay on <code>help.example.com</code>. A verify script fails the build if a real host or a live ID slips in.</p>
+      <p>
+        <a class="btn" href="https://rachelbatra032-design.github.io/help-pulse-triage-dashboard/">Open the live dashboard</a>
+        <a class="btn" href="https://github.com/rachelbatra032-design/help-pulse-triage-dashboard">Source</a>
+      </p>
+      <p class="tags">Python · static HTML · triage rules · mock data</p>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

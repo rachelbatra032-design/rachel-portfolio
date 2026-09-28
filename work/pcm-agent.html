@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PCM Agent — Rachel Batra</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-lock="pcm-agent">
+  <div class="shell">
+    <aside class="rail">
+      <p class="rail-lede"><a href="../index.html">Rachel Batra studied economics at St. Stephen’s College, Delhi.</a></p>
+      <ol class="index">
+        <li><a href="help-pulse.html">Help Pulse</a></li>
+        <li><a href="pcm-agent.html" aria-current="page">PCM Agent</a></li>
+        <li><a href="oaxaca.html">Oaxaca’s Double-Edged Sword</a></li>
+        <li><a href="wasila.html">WASILA</a></li>
+        <li><a href="abcd.html">ABCD</a></li>
+      </ol>
+      <p class="meta-nav">
+        <a href="../about.html">About</a>
+        <a href="../play.html">Play</a>
+        <a href="https://github.com/rachelbatra032-design">GitHub</a>
+      </p>
+      <p class="rail-foot">© <span id="year"></span> Rachel Batra</p>
+    </aside>
+    <main class="stage">
+      <div class="prose-inner">
+      <p class="kicker">Systems I built · locked</p>
+      <h1>PCM Agent</h1>
+      <p class="lede">Designing agentic AI into Product Catalog Management on Salesforce Revenue Cloud — information architecture, user flows, and the interaction model. 2025.</p>
+      <video class="hero-vid" autoplay muted loop playsinline poster="../images/pcm-agent-poster.jpg">
+        <source src="../images/pcm-agent.mp4" type="video/mp4">
+      </video>
+
+      <p>Agentforce with Product Catalog Management helps customers build a product portfolio that can actually be shown to partners and customers — infusing agentic AI into catalog management, product launch, attribute management, and qualification.</p>
+
+      <table class="facts">
+        <tr><th>Role</th><td>Product designer — information architecture, user flows, AI interaction model</td></tr>
+        <tr><th>Platform</th><td>Salesforce Revenue Cloud</td></tr>
+        <tr><th>AI type</th><td>Agentforce + embedded AI</td></tr>
+        <tr><th>Deliverables</th><td>IA · user flows · AI interaction model</td></tr>
+        <tr><th>Category</th><td>Agentforce agents and actions · embedded AI</td></tr>
+      </table>
+
+      <h2>01 — Context &amp; problem</h2>
+      <p>Revenue Cloud’s Product Catalog Management module is how a business defines, organizes, and delivers its portfolio. As catalogs scale, they become thousands of SKUs, attributes, rules, and nested relationships — still managed by hand by catalog administrators.</p>
+      <p class="pull">The core problem: high-growth companies cannot keep up.</p>
+      <p>A new product line means re-defining attributes, re-categorizing SKUs, writing qualification rules, and updating hierarchies. A launch that should take days stretches into weeks. The work here is the information architecture and AI interaction model for an Agentforce-powered PCM — a system that is proactive rather than passively reactive.</p>
+      <h3>Pain points</h3>
+      <ul>
+        <li><strong>Slow</strong> — manual attribute definition across hundreds of product types</li>
+        <li><strong>Error-prone</strong> — qualification rules are complex, conflict-prone, and unvalidated</li>
+        <li><strong>Scale</strong> — catalog hierarchies become unmanageable without intelligent tooling</li>
+        <li><strong>Delay</strong> — product descriptions are inconsistent, which slows time-to-launch</li>
+      </ul>
+
+      <h2>02 — Personas</h2>
+      <h3>Alex Chen — Catalog Administrator</h3>
+      <p><em>Mid-to-large enterprise.</em> Keeps the catalog true across thousands of SKUs. Defines attributes, picklists, and qualification rules. Owns hierarchies and category structure. Has to make the catalog match business logic and segment rules.</p>
+      <p>The work is repetitive. Qualification rules need domain knowledge and still break. Conflicts only show up downstream. Catalog updates become the reason a launch slips.</p>
+      <p>The goal: create and manage a complex catalog — attributes, product relationships, qualification rules — so new products can launch and the catalog can grow with the business.</p>
+      <h3>Jordan Rivera — Product Designer</h3>
+      <p><em>A design persona on the Revenue Cloud catalog, not a job title.</em> Creates simple products and complex bundles. Defines relationships and dependencies. Maps products to classification templates. Works with the catalog admin on launches.</p>
+      <p>Writing descriptions from scratch is slow and inconsistent. Bundle logic is hard to see and hard to validate. Attribute assignment to templates is entirely manual. Downstream impact of a structure change is invisible.</p>
+      <p>The goal: create products and bundles quickly, with suggestions that cut guesswork, so time goes to product decisions rather than data entry.</p>
+
+      <h2>03 — User story</h2>
+      <p><strong>As a</strong> product catalog administrator managing a growing enterprise portfolio on Revenue Cloud — <strong>when I</strong> maintain the catalog, expand offerings, and keep it true for different customer segments — <strong>I want</strong> to create and manage complex catalogs, including attributes, relationships, and qualification rules, with AI at each step — <strong>so that</strong> new products launch faster, manual updates shrink, and the catalog can scale.</p>
+      <p>Measured by solution delivery time-to-value, product launch speed, and product description accuracy.</p>
+
+      <h2>04 — Design process</h2>
+      <h3>Discover</h3>
+      <p>Stakeholder interviews, workflow audits, and a look at other catalog tools. The question was where admins spend the most time and where errors actually happen.</p>
+      <h3>Define</h3>
+      <p>Mapped the journey for both personas. Named the four phases and their pain thresholds. Drew the line between catalog admin and product designer work.</p>
+      <h3>Structure</h3>
+      <p>Built the IA — hierarchy, task flows, and the AI intervention point for each phase. Made an explicit call on which modality belonged to which task: Agentforce agent versus embedded AI.</p>
+      <h3>Validate</h3>
+      <p>Reviewed the IA with the product team and catalog admins. Iterated on AI touchpoints so they felt assistive, not in the way, and so a person stayed in the loop throughout.</p>
+
+      <h2>05 — Information architecture</h2>
+      <p>The catalog lifecycle is four sequential phases. Each has an owner. Agentforce sits through the map as a co-pilot, not a separate product.</p>
+      <pre class="tree">PCM Agent · Revenue Cloud
+
+Phase 1  Describe what we sell     Catalog Admin
+         Product attribute definition
+         · define attributes
+         · manage picklists
+         · categorize attributes
+         · AI: auto-classify attributes, suggest picklist values
+
+Phase 2  Define what we sell       Product Designer
+         Product creation
+         · simple products, bundles, relations
+         · AI: generate product descriptions
+         Product classification
+         · templates, attributes on templates
+         · AI: suggest template structure
+
+Phase 3  Define who we sell to     Catalog Admin
+         Qualification rules
+         · conceptualize, then create
+         · AI: generate rules from natural-language intent
+         · AI: validate and flag conflicts
+
+Phase 4  Organize what we sell     Catalog Admin
+         Catalog creation
+         · catalogs, categories, products in catalogs
+         · AI: suggest hierarchies
+         · AI: auto-assign products
+         · AI: flag miscategorized items</pre>
+      <p>Journey phases sit above tasks. AI actions are labeled. Role ownership is on the phase, not hidden in a permission matrix.</p>
+
+      <h2>06 — AI interaction design</h2>
+      <p class="pull">AI should accelerate the admin’s workflow, not replace their judgment. Every touchpoint is transparent, reversible, and only there when it has enough context.</p>
+      <h3>Attribute auto-classification — Phase 1, embedded AI</h3>
+      <p>When an admin starts an attribute, the model looks at the name and existing catalog patterns and suggests type, picklist values, and category placement.</p>
+      <h3>Product description generation — Phase 2, Agentforce</h3>
+      <p>On a new product, a structured description is drafted from name, category, and assigned attributes. Accept, edit, or regenerate. No blank page, and no forced copy.</p>
+      <h3>Qualification rule generation — Phase 3, Agentforce + embedded AI</h3>
+      <p>The hardest phase. An admin says the eligibility in English — “this product is only for enterprise customers in EMEA” — and the system turns that into structured rule logic, with a preview of who would qualify.</p>
+      <h3>Catalog hierarchy suggestions — Phase 4, embedded AI</h3>
+      <p>While the structure is being built, similar catalogs suggest groupings. Products that look miscategorized, given their attributes, get flagged.</p>
+      <h3>Principles</h3>
+      <ul>
+        <li><strong>Contextual.</strong> AI only fires when there is enough context for a suggestion to mean something. No generic prompts.</li>
+        <li><strong>Reversible.</strong> Every action can be undone, edited, or ignored. The admin has the last word.</li>
+        <li><strong>Transparent.</strong> Suggestions are labeled, and they show a reason when they can — “suggested from similar products in your catalog.”</li>
+      </ul>
+
+      <h2>07 — Design decisions</h2>
+      <h3>Four phases, not one mega-workflow</h3>
+      <p>Describe. Define the product. Define who. Organize. Each phase has an owner, an input, and an output.</p>
+      <p class="why">People were getting lost in one giant catalog screen. Named phases are mental anchors. They speed onboarding. They also make AI placement obvious — each phase gets the AI that belongs to it.</p>
+      <h3>Agentforce for intent, embedded AI for repetition</h3>
+      <p>Qualification rules are complex and intent-driven — that is an agent. Attribute classification is pattern matching — that is embedded AI.</p>
+      <p class="why">A full agent for auto-classification is heavy-handed. Embedded AI for natural-language rules is not enough. Matching modality to the task was an IA decision, not a model decision.</p>
+      <h3>The admin keeps final control</h3>
+      <p>Every suggestion is a starting point. Accept / edit / reject is explicit. The system does not act without them.</p>
+      <p class="why">Enterprise catalog data is business-critical. Trust depends on feeling in control. Human-in-the-loop at every AI touchpoint was not optional.</p>
+      <h3>Two personas, one IA</h3>
+      <p>Not two separate flows. Tasks are delineated; the system stays one map. Role-based visibility handles the rest.</p>
+      <p class="why">Separate flows create coordination overhead. A unified IA lets both people see how their work connects — which is the point of a collaborative launch.</p>
+
+      <h2>08 — Outcomes, as targets</h2>
+      <p>These are how the design was scored, not claims about a shipped product.</p>
+      <h3>Solution delivery time-to-value</h3>
+      <p>How quickly a new customer can stand up a production-ready catalog. Target: cut setup time by about 40% with AI-assisted flows across attributes, templates, and catalog creation.</p>
+      <h3>Product launch speed</h3>
+      <p>Time from concept to catalog-ready. Attribute definition and classification are meant to move a standard product type from days toward hours.</p>
+      <h3>Product description accuracy</h3>
+      <p>Quality check via downstream conversion and search relevance. AI-written descriptions benchmarked against hand-written ones for completeness and searchability.</p>
+
+      <h2>09 — Reflections</h2>
+      <h3>IA is the foundation of AI</h3>
+      <p>Before any AI interaction, the hierarchy has to be clear. Features that live in a confusing map will feel unpredictable no matter how good the model is. Getting the structure right first made the AI decisions obvious.</p>
+      <h3>Match modality to the task</h3>
+      <p>Not every task needs a full agent. Knowing when to use embedded AI versus conversational Agentforce was one of the more useful calls on this project. It required the user’s mental model and the actual technical range.</p>
+      <h3>Enterprise users want less cognitive load, not more AI</h3>
+      <p>The best touchpoints disappear into the workflow. When AI is invisible and the work is just faster, it is working. When it demands attention and explanation, something in the design went wrong.</p>
+
+      <p class="tags">Salesforce Revenue Cloud · Agentforce · information architecture · 2025</p>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>
