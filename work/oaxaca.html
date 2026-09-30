@@ -3,33 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Oaxaca’s Double-Edged Sword — Rachel Batra</title>
+  <title>Oaxaca · Rachel Batra</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <div class="shell">
     <aside class="rail">
-      <p class="rail-lede"><a href="../index.html">Rachel Batra studied economics at St. Stephen’s College, Delhi.</a></p>
+      <p class="rail-lede"><a href="../index.html">Rachel</a> Batra is a Product Content Strategist at Salesforce, based in Bangalore.</p>
       <ol class="index">
         <li><a href="help-pulse.html">Help Pulse</a></li>
-        <li><a href="pcm-agent.html">PCM Agent</a></li>
-        <li><a href="oaxaca.html" aria-current="page">Oaxaca’s Double-Edged Sword</a></li>
-        <li><a href="wasila.html">WASILA</a></li>
-        <li><a href="abcd.html">ABCD</a></li>
+        <li><a href="pcm-agent.html">Agentforce Catalog</a></li>
+        <li><a href="abcd.html">Vikalp</a></li>
+        <li><a href="wasila.html">Wasila</a></li>
+        <li><a href="oaxaca.html" aria-current="page">Oaxaca</a></li>
       </ol>
       <p class="meta-nav">
         <a href="../about.html">About</a>
+        <a href="https://www.linkedin.com/in/rachel-batra" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="../play.html">Play</a>
         <a href="https://github.com/rachelbatra032-design">GitHub</a>
+      </p>
+      <p class="rail-request">
+        <svg class="icon-box" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M16 3.19 3.33 9.29v12.81L16 28.81l12.67-6.42V9.29L16 3.19Zm0 12.45L10.39 12.76 21.98 6.74 27.81 9.58 16 15.64ZM16 3.83l5.26 2.56-11.57 6.01L4.19 9.58 16 3.83ZM3.8 10.1 15.68 16.2V28L3.8 21.91V10.1Zm24.4 11.81L16.32 28V16.2L28.2 10.1v11.81Z"/>
+        </svg>
+        Complete portfolio available upon request
       </p>
       <p class="rail-foot">© <span id="year"></span> Rachel Batra</p>
     </aside>
     <main class="stage">
       <div class="prose-inner">
       <p class="kicker">Research</p>
-      <h1>Oaxaca’s Double-Edged Sword</h1>
-      <p class="lede">Gender wage discrimination in India. St. Stephen’s paper with Arz Taneja. A modified Mincer wage function, then Blinder–Oaxaca on IHDS-I and IHDS-II — endowments versus coefficients, urban versus rural.</p>
+      <h1>Oaxaca</h1>
+      <p class="lede">The paper is titled <em>Oaxaca’s Double-Edged Sword</em>. Gender wage discrimination in India. St. Stephen’s, with Arz Taneja. A modified Mincer wage function, then Blinder–Oaxaca on IHDS-I and IHDS-II, endowments versus coefficients, urban versus rural.</p>
       <img class="hero-img" src="../images/oaxaca.jpg" alt="">
 
       <table class="facts">
@@ -40,28 +47,28 @@
       </table>
 
       <h2>The question</h2>
-      <p>The usual story blames the gender wage gap on employer bias and stops there. The paper asks how much of the gap is what men and women bring (education, experience, assets, children, household education, marriage) and how much is the same traits paying differently — and whether that split looks the same in a city and in a village.</p>
+      <p>The usual story blames the gender wage gap on employer bias and stops there. The paper asks how much of the gap is what men and women bring (education, experience, assets, children, household education, marriage) and how much is the same traits paying differently, and whether that split looks the same in a city and in a village.</p>
       <p>It sits in labour economics (J16, J24, J31, J71) and in the newer work on culture and economic outcomes. India is the case: policies have moved, the gap has not gone away.</p>
 
       <h2>What is in the data</h2>
-      <p>IHDS is a household survey. The wage work uses people with a valid hourly wage and complete covariates. 2011: 53,283 people. 2005: 48,319. Tables on who is in the survey and who works use the full person file — no wage filter.</p>
+      <p>IHDS is a household survey. The wage work uses people with a valid hourly wage and complete covariates. 2011: 53,283 people. 2005: 48,319. Tables on who is in the survey and who works use the full person file, no wage filter.</p>
       <p>Six regressors, linear experience, currently married only. No elderly term, no experience squared. That is the specification that matches the printed tables. The “more than 240 hours” work rule is IHDS work codes 3 and 4, not a filter on hours.</p>
       <p>In 2011, 51.8% of men and 24.9% of women do any work by that definition. The male surplus is largest in non-agricultural labour and salaried work. Animal care is the exception. Conditional on reporting the variable, men average 1,022 hours and ₹31 an hour; women 316 hours and ₹19.</p>
 
       <h2>How the gap is split</h2>
-      <p>Four Mincer equations: urban men, urban women, rural men, rural women. On a log wage, a coefficient is an approximate percent. Urban women’s education in 2011 is 0.07 — about 7% more per extra year of school, holding the rest fixed. Marriage is +0.15 for urban men and +0.01 for urban women.</p>
+      <p>Four Mincer equations: urban men, urban women, rural men, rural women. On a log wage, a coefficient is an approximate percent. Urban women’s education in 2011 is 0.07. about 7% more per extra year of school, holding the rest fixed. Marriage is +0.15 for urban men and +0.01 for urban women.</p>
       <p>Oaxaca then asks: of the male–female gap in mean log wages, how much is men having more education and assets (endowments), and how much is the same traits paying more for men (coefficients)?</p>
       <ul>
-        <li><strong>R</strong> — mean log wage, men minus women</li>
-        <li><strong>E</strong> — if women had men’s characteristics and women’s returns</li>
-        <li><strong>C</strong> — if women kept their characteristics and were paid men’s returns</li>
-        <li><strong>I</strong> — both differences at once</li>
+        <li><strong>R</strong>: mean log wage, men minus women</li>
+        <li><strong>E</strong>: if women had men’s characteristics and women’s returns</li>
+        <li><strong>C</strong>: if women kept their characteristics and were paid men’s returns</li>
+        <li><strong>I</strong>: both differences at once</li>
       </ul>
       <p>E + C + I equals R. Percent explained is E / R.</p>
 
       <h2>What the numbers say</h2>
       <p class="pull">In 2011 the all-India gap is 0.50 log points. About 34% is endowments. Most of it is coefficients.</p>
-      <p>Urban explained share: 33%. Rural: 16.5%. The unexplained share is thicker in the village. In 2005 the all-India gap was larger — 0.65 — and more of it was endowments (46%). Urban 43%, rural 28%.</p>
+      <p>Urban explained share: 33%. Rural: 16.5%. The unexplained share is thicker in the village. In 2005 the all-India gap was larger, 0.65. and more of it was endowments (46%). Urban 43%, rural 28%.</p>
       <p>Those are the printed Table 7 rounds. The public repo recomputes every exhibit from local microdata so the numbers can be re-run, not just cited. Licensed IHDS files are not stored there.</p>
       <p><a class="btn" href="https://github.com/rachelbatra032-design/oaxaca-gender-wage-india">View the repository</a></p>
       <p class="tags">Stata · IHDS · Oaxaca–Blinder · gender · wages</p>

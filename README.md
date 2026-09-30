@@ -1,20 +1,26 @@
-# Rachel Batra — portfolio (local sample)
+# Rachel Batra, portfolio
 
-Katrina-style archive: Work, Play, About. Not on GitHub or Vercel yet.
+Static HTML. Public repo: [rachel-portfolio](https://github.com/rachelbatra032-design/rachel-portfolio). Host on Vercel.
 
-## Open locally
+```
+index.html about.html play.html
+work/                 case studies
+images/ fonts/
+api/unlock.js         sets the PCM cookie
+middleware.js         blocks Agentforce Catalog without that cookie
+vercel.json
+```
+
+## Local
 
 ```bash
-cd /Users/rachelbatra/Projects/rachelbatra032-design.github.io
 python3 -m http.server 3000
 ```
 
-Then open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000). The Agentforce Catalog password gate only runs on Vercel.
 
-- **Work** — all projects, three sections
-- **Play** — empty black grid (images later)
-- **PCM Agent** is locked. Password: `preview`
+## Vercel
 
-## Later
+Import this repo. Framework: Other. Root: `.`. Build command empty. Output directory empty. Production branch: `main`.
 
-Install Node, keep or migrate these pages, push a public `portfolio` repo, connect Vercel.
+Add environment variable `CASE_STUDY_PASSWORD` (Production and Preview).

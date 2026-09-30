@@ -115,12 +115,6 @@
     stage.addEventListener("pointercancel", endDrag);
   })();
 
-  var locked = document.body.getAttribute("data-lock");
-  if (locked && !/case_study=1/.test(document.cookie)) {
-    window.location.replace("unlock.html?next=" + encodeURIComponent(locked));
-    return;
-  }
-
   var form = document.getElementById("unlock-form");
   if (!form) return;
 
@@ -129,11 +123,17 @@
     var input = form.querySelector("input[name='password']");
     var err = document.getElementById("unlock-error");
     var next = new URLSearchParams(window.location.search).get("next") || "pcm-agent";
-    if (input && input.value === "preview") {
-      document.cookie = "case_study=1; path=/; max-age=86400";
+    if (err) err.hidden = true;
+    fetch("/api/unlock", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "same-origin",
+      body: JSON.stringify({ password: input ? input.value : "" })
+    }).then(function (res) {
+      if (!res.ok) throw new Error("unlock failed");
       window.location.href = next + ".html";
-      return;
-    }
-    if (err) err.hidden = false;
+    }).catch(function () {
+      if (err) err.hidden = false;
+    });
   });
 })();

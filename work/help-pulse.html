@@ -3,25 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Help Pulse — Rachel Batra</title>
+  <title>Help Pulse · Rachel Batra</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <div class="shell">
     <aside class="rail">
-      <p class="rail-lede"><a href="../index.html">Rachel Batra studied economics at St. Stephen’s College, Delhi.</a></p>
+      <p class="rail-lede"><a href="../index.html">Rachel</a> Batra is a Product Content Strategist at Salesforce, based in Bangalore.</p>
       <ol class="index">
         <li><a href="help-pulse.html" aria-current="page">Help Pulse</a></li>
-        <li><a href="pcm-agent.html">PCM Agent</a></li>
-        <li><a href="oaxaca.html">Oaxaca’s Double-Edged Sword</a></li>
-        <li><a href="wasila.html">WASILA</a></li>
-        <li><a href="abcd.html">ABCD</a></li>
+        <li><a href="pcm-agent.html">Agentforce Catalog</a></li>
+        <li><a href="abcd.html">Vikalp</a></li>
+        <li><a href="wasila.html">Wasila</a></li>
+        <li><a href="oaxaca.html">Oaxaca</a></li>
       </ol>
       <p class="meta-nav">
         <a href="../about.html">About</a>
+        <a href="https://www.linkedin.com/in/rachel-batra" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="../play.html">Play</a>
         <a href="https://github.com/rachelbatra032-design">GitHub</a>
+      </p>
+      <p class="rail-request">
+        <svg class="icon-box" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M16 3.19 3.33 9.29v12.81L16 28.81l12.67-6.42V9.29L16 3.19Zm0 12.45L10.39 12.76 21.98 6.74 27.81 9.58 16 15.64ZM16 3.83l5.26 2.56-11.57 6.01L4.19 9.58 16 3.83ZM3.8 10.1 15.68 16.2V28L3.8 21.91V10.1Zm24.4 11.81L16.32 28V16.2L28.2 10.1v11.81Z"/>
+        </svg>
+        Complete portfolio available upon request
       </p>
       <p class="rail-foot">© <span id="year"></span> Rachel Batra</p>
     </aside>
@@ -29,52 +36,46 @@
       <div class="prose-inner">
       <p class="kicker">Systems I built</p>
       <h1>Help Pulse</h1>
-      <p class="lede">A small, reproducible pipeline that turns “not helpful” votes and free-text comments into a prioritized backlog. Public demo. Mock data only.</p>
-      <img class="hero-img" src="../images/help-pulse.jpg" alt="">
+      <p class="lede">Triage for Help and Training Article Votes on Salesforce Revenue Cloud. Written rules, a shared dashboard, and a public demo that runs on mock data only.</p>
+      <img class="hero-img" src="../images/help-pulse.jpg" alt="HTAV triage dashboard: open records, buckets by priority, and a Fix First list">
 
       <table class="facts">
-        <tr><th>What it is</th><td>Triage rules plus a static dashboard</td></tr>
-        <tr><th>Stack</th><td>Python · one HTML file · no npm</td></tr>
-        <tr><th>Data</th><td>Fictional feedback, IDs, and Help URLs</td></tr>
-        <tr><th>Role of AI</th><td>Drafts a pass; a person reviews before anything is acted on</td></tr>
+        <tr><th>Role</th><td>Wrote the triage rules and built the dashboard</td></tr>
+        <tr><th>Inside Salesforce</th><td>Shipped. About 200 people use it. Processing time down about 70 percent. Six to eight weeks of writer time back each release.</td></tr>
+        <tr><th>Public demo</th><td>Same shape. Forty-four fictional records. No live customer text.</td></tr>
+        <tr><th>Stack</th><td>Python, one HTML file, no npm</td></tr>
       </table>
 
-      <h2>The problem</h2>
-      <p>Help sites collect a steady stream of unhelpful votes and comments. Without a shared system, writers either read every record one by one in a CRM, or they triage inconsistently — the same bug three times, a broken link sitting next to a vague rant.</p>
-      <p>“Pulse” here is a health check on the docs: volume plus severity of feedback. It is not a product brand.</p>
+      <h2>01. The pile</h2>
+      <p>Revenue Cloud help articles collect unhelpful votes and free-text comments. Each one is an HTAV: a Help and Training Article Vote. Before this, a writer opened the CRM and read them in order. The same broken See Also link showed up three times. A rant with no locatable ask sat next to a wrong percentage. Nothing told you what to do first.</p>
+      <p>Help Pulse is the name on the public demo. At work it is the HTAV pass: a monthly export, a set of written calls, then a dashboard the team can share instead of a private spreadsheet.</p>
 
-      <h2>What the system answers</h2>
+      <h2>02. The three questions</h2>
+      <p>Every open record has to answer three things, in this order.</p>
       <ul>
-        <li><strong>Should we act?</strong> Actionable / Non-actionable / Needs-info</li>
-        <li><strong>What kind of fix?</strong> Broken link · incorrect info · missing info · unclear · route elsewhere</li>
-        <li><strong>How urgent?</strong> P0–P3. P0 is always human-confirmed.</li>
+        <li>Should we act? Actionable, non-actionable, or needs more information.</li>
+        <li>What kind of fix? Broken link, incorrect info, missing info, unclear, or route it elsewhere.</li>
+        <li>How urgent, if we act? P0 to P3. P0 never writes itself.</li>
       </ul>
+      <p>The buckets came down to five. Confusing and vague folded into unclear. Product bugs, support how-tos, and “please make this a PDF” all route elsewhere. Reading the article cannot prove that the product is broken.</p>
 
-      <h2>Two parts</h2>
-      <p>The skill is the brain: written rules for triage, buckets, priority, and source validation. The dashboard is the face: heatmap, Fix First list, duplicate clusters, article drawer, work-item template.</p>
-      <p>This public repo is a sanitized, runnable demo of that idea — same architecture and UI patterns, mock data only.</p>
+      <h2>03. How a pass actually runs</h2>
+      <p>Closed records stay out. Each open row gets a provisional bucket from the feedback itself. Then, for the four content buckets, someone has to open the live article and check the claim. If the page says what the customer said it said, the row is actionable. If the page already contradicts it, the row is not. If the page will not load, the call stays flagged as unverified. Route-elsewhere skips that check on purpose.</p>
+      <p>Priority is a ladder, not a vibe. A wrong number that sends the reader the wrong way is P1. A missing value that blocks a setup is P2. Wording, order, tiny screenshots: P3. Internal reporters floor an actionable item at P1. If a P3 clusters to ten or more of the same issue, it steps to P2. Security, customer-data exposure, or legal risk in the doc is P0, and it does not land in the file until a person says yes in the chat.</p>
+      <p>The rules were settled on a labeled batch of 83 records so two people would make the same call the next month, instead of re-arguing each row.</p>
+      <p class="pull">AI drafts the pass. A person reviews it. Nothing auto-closes. Nothing files a work item on its own. Nothing publishes.</p>
 
-      <h2>How a pass is made</h2>
-      <p>Open records only. Each row gets a provisional bucket, then — for the four content buckets — a check against the article itself. A claim the page bears out is Actionable. A claim the live article contradicts is Non-actionable. If the page will not load, the call stays flagged as source-unverified. “Route elsewhere” skips the article check; reading the doc cannot prove product behavior.</p>
-      <p>Priority walks a decision tree. Internal reporters can floor an actionable item at P1. A P3 that clusters to ten or more records steps up to P2. P0 — security, customer-data exposure, legal risk in the doc — never lands in the file without an explicit yes from a person.</p>
-      <p class="pull">AI drafts. A person approves. No auto-close, no auto-created work items, no publish.</p>
+      <h2>04. What the dashboard is for</h2>
+      <p>The written rules are useless if the queue still lives in one person’s head. The dashboard is one HTML file: a heatmap of bucket against priority, a Fix First list, duplicate clusters, an article drawer, and a work-item template. One cluster is one work item. Every member vote stays visible so you can see the pile, not only the ticket.</p>
+      <p>Tone does not change the call. If the feedback names a real, fixable problem, it is actionable. The note is restated without the heat. The customer’s words stay in the source column.</p>
 
-      <h2>Rules that stay hard</h2>
-      <ul>
-        <li>Doc-versus-product is a hypothesis, not a verdict. Routing to product means “confirm with someone who knows,” not “the product is broken.”</li>
-        <li>Triage on signal, not tone. Profanity does not change the call. The note is restated professionally; the customer’s words stay in the source column.</li>
-        <li>No validity verdict without retrieved content. If the article did not render, do not invent what it says.</li>
-        <li>One work item per cluster, not per vote. Every member record stays visible on the dashboard.</li>
-      </ul>
-
-      <h2>What is in the demo</h2>
-      <p>Forty-four mock records map to nine stub Help articles baked into a single <code>index.html</code>. Heatmap, filters, clusters, drawer, and the work-item template all run locally. Feedback links go to <code>example.com</code>. The live Help host is fiction. The feedback form is off on purpose.</p>
-      <p>IDs look like <code>HTAV-1000001</code>. Help URLs stay on <code>help.example.com</code>. A verify script fails the build if a real host or a live ID slips in.</p>
+      <h2>05. What you can open</h2>
+      <p>The public repo is a clean copy of that shape. Forty-four mock records map to nine stub articles baked into <code>index.html</code>. IDs look like <code>HTAV-1000001</code>. Help URLs stay on <code>help.example.com</code>. Feedback links go to <code>example.com</code>. A verify script fails the build if a real host or a live ID slips in. The feedback form is off on purpose.</p>
       <p>
         <a class="btn" href="https://rachelbatra032-design.github.io/help-pulse-triage-dashboard/">Open the live dashboard</a>
         <a class="btn" href="https://github.com/rachelbatra032-design/help-pulse-triage-dashboard">Source</a>
       </p>
-      <p class="tags">Python · static HTML · triage rules · mock data</p>
+      <p class="tags">HTAV · Revenue Cloud · Python · static HTML · mock data</p>
       </div>
     </main>
   </div>
